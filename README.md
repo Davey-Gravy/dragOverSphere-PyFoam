@@ -19,5 +19,6 @@ Adapting the `simpleFoam/motorBike` case produced these preliminary results:
 <img src="https://user-images.githubusercontent.com/51386700/144313062-62d417a5-f169-43b9-9879-49739e0108fb.png" width="500"/>
 
 
-## In progress
+## To do
+- Mesh convergence study
 - Automatic plotting
