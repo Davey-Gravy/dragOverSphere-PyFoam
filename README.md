@@ -1,24 +1,36 @@
 # dragOverSphere-PyFoam
-A numerical investigation of drag over a sphere using OpenFOAM and the parameter variation capabilities of PyFoam.
+
+This is a quick project to determine the drag over a sphere using OpenFOAM and the parameter variation capabililties of the PyFoam Python library.
+
+## Prerequisites
+
+- [OpenFOAM 9](https://openfoam.org/version/9/)
+- [PyFoam](https://pypi.org/project/PyFoam/)
+
 ## Background
-The drag coefficient of drag over a sphere has been tabulated in Schlicthing, 1955, and is shown below:
+
+The drag coefficient of a sphere varies with Reynolds number, and this data is tabulated and correlated below (Schlichting, 1955; Morrison, 2013):
 
 <img src="https://user-images.githubusercontent.com/51386700/144309550-d3d8c13f-bd08-46fd-92de-f2cb91292540.png" width="500"/>
 
-This investigation aims to utilize CFD to reproduce these results as accurately as possible within my resources.
-## Requirements
-- PyFoam library
-- OpenFOAM 9
+## Methodology
 
-## How to use
+- Mesher: blockMesh
+- Solver: simpleFoam
+- Turbulnce model: laminar
 
-Simply run `parameterVariation.py` and OpenFOAM cases with Reynolds numbers varying from 1e-2 to 1e7 will be created and ran using `simpleFoam`.
+The `0/` and `system/` directories from the `simpleFoam/motorBike` tutorial were adapted for the simulations, as the tutorial was similar to a wind tunnel.
 
-## Preliminary results
-Adapting the `simpleFoam/motorBike` case produced these preliminary results:
+## (Preliminary) Results
+
 <img src="https://user-images.githubusercontent.com/51386700/144313062-62d417a5-f169-43b9-9879-49739e0108fb.png" width="500"/>
 
+The simulated drag coefficient matches reasonably well with the data corrleation in a wide range of Reynolds number, though the drop in drag coefficient, known as the "drag crisis" or "Eiffel paradox" phenomenon is not displayed in the simulated results.
 
-## To do
+
+The drag crisis is caused by a transition from a laminar boundary layer flow to a turbulent boundary layer flow, which results in a change from periodic vortex shedding to randomized vortex shedding. Since no turbulence model is used for these results, it is natural that this is not observed.
+
+## To-do
+
 - Mesh convergence study
-- Automatic plotting
+- Plot automation
