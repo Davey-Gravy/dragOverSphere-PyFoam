@@ -1,4 +1,5 @@
 from os import path
+import math
 from PyFoam.RunDictionary.SolutionDirectory import SolutionDirectory
 from PyFoam.RunDictionary.ParsedParameterFile import ParsedParameterFile
 from PyFoam.Execution.BasicRunner import BasicRunner
@@ -11,8 +12,9 @@ templateCase = SolutionDirectory(
 nus = [100, 10, 1, 0.1, 0.01, 0.001, 0.0001, 0.00001, 0.000001, 0.0000001]
 
 for nu in nus:
+    Re = round((1/nu), 2)
     # create each Re case
-    case = templateCase.cloneCase(f"flowAroundSphere-nu{nu}")
+    case = templateCase.cloneCase(f"flowAroundSphere_Re_{Re}")
     vis = ParsedParameterFile(
         path.join(case.name, "constant", "transportProperties"))
     # change viscosity

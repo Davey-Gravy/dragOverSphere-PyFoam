@@ -1,0 +1,10 @@
+set term png
+set output "Cd_vs_Re.png"
+set datafile separator ','
+set title "Drag coefficient of a sphere in uniform flow"
+set xlabel "Reynolds number (Re)"
+set ylabel "Drag coefficient (C_d)"
+set logscale xy
+set xrange [0.01:1e7]
+f(x) = (24/x) + ( (2.6*x/5)/(1+(x/5)**1.52) ) + ( (0.411*(x/2.63e5)**(-7.94))/(1+(x/2.67e5)**(-8)) ) + ( (0.25*(x/1e6))/(1+(x/1e6)) )
+plot "Cd.dat" w lp, f(x) w l

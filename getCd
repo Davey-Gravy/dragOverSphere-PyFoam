@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# if Cd.dat exists, then clear it
+# else create it
+if [ Cd.dat ];
+then
+    > Cd.dat
+else
+    touch Cd.dat
+fi
+
+# loop through each case, extract Re and Cd, and write to Cd.dat
+for i in flowAroundSphere_*; do
+    Re="${i##*_},"
+    Cd=$(tail -n 1 "$i"/postProcessing/forceCoeffs1/0/forceCoeffs.dat | awk '{print $3}')
+    echo "$Re$Cd" >> Cd.dat
+done

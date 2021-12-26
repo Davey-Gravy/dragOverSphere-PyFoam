@@ -1,0 +1,9 @@
+#!/bin/bash
+
+rm -rf flowAroundSphere_*
+
+python3 parameterVariation.py
+
+./getCd
+
+gnuplot plot.gpl

@@ -32,5 +32,7 @@ The drag crisis is caused by a transition from a laminar boundary layer flow to 
 
 ## To-do
 
-- Mesh convergence study
-- Plot automation
+- [x] Plot automation
+
+- [] Mesh convergence study
+
