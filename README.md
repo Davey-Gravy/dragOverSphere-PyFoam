@@ -23,7 +23,7 @@ The `0/` and `system/` directories from the `simpleFoam/motorBike` tutorial were
 
 ## (Preliminary) Results
 
-<img src="https://user-images.githubusercontent.com/51386700/144313062-62d417a5-f169-43b9-9879-49739e0108fb.png" width="500"/>
+<img src="https://user-images.githubusercontent.com/51386700/147396880-fa4856fd-861b-4763-888d-73ca98bcee5a.png" width="500"/>
 
 The simulated drag coefficient matches reasonably well with the data corrleation in a wide range of Reynolds number, though the drop in drag coefficient, known as the "drag crisis" or "Eiffel paradox" phenomenon is not displayed in the simulated results.
 
