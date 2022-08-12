@@ -1,0 +1,4 @@
+#!/bin/bash
+
+rm -rf flowAroundSphere_*
+rm Cd.dat
